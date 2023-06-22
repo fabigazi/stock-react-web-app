@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const SERVER = "https://tuiter-node-server-app-su1-23.onrender.com";
+const SERVER = "https://stock-node-server-app.onrender.com";
 const BASE_API = `${SERVER}/api`;
 
 const request = axios.create({
