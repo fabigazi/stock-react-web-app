@@ -1,0 +1,240 @@
+<html>
+  <head>
+    <link href="../vendors/bootstrap.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <table>
+        <tr>
+          <td style="vertical-align: top">
+            <!-- <h2>Global Navigation</h2> -->
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a class="nav-link" href="account.html">Account</a>
+              </li>
+              <li class="list-group-item">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+              </li>
+              <li class="list-group-item active">
+                <a class="nav-link" href="courses.html"> <b>Courses</b></a>
+              </li>
+              <li class="list-group-item">
+                <a class="nav-link" href="calendar.html">Calendar</a>
+              </li>
+              <li class="list-group-item">
+                <a class="nav-link" href="messages.html">Messages</a>
+              </li>
+              <li class="list-group-item">
+                <a class="nav-link" href="settings.html">Settings</a>
+              </li>
+              <li class="list-group-item">
+                <a class="nav-link" href="help.html">Help</a>
+              </li>
+            </ul>
+          </td>
+
+          <td style="vertical-align: top">
+            <h2>Account</h2>
+
+            <form action="index.html">
+              First Name
+              <input type="text" value="John" placeholder="e.g., Sean" />
+
+              <br />
+
+              Last Name
+              <input type="text" placeholder="e.g., Smith" />
+
+              <br />
+
+              Middle Name <br />
+              <input type="text" value="Smith" />
+
+              <br />
+
+              <label for="email">Email</label> <br />
+              <input type="email" value="jdoe@gmail.com" id="email" />
+
+              <br />
+
+              <label for="username">Username</label> <br />
+              <input
+                readonly
+                type="text"
+                name="username"
+                value="jdoe"
+                id="username"
+              />
+
+              <br />
+
+              <label for="password">Password</label> <br />
+              <input
+                type="password"
+                name="password"
+                value="password"
+                id="password"
+              />
+
+              <br />
+
+              <label for="role">Role</label> <br />
+              <select id="role" name="role">
+                <option value="student">Student enrolled in course</option>
+                <option value="teacher" selected>
+                  Teacher teaching the course
+                </option>
+                <option value="admin">Admin</option>
+              </select>
+
+              <br />
+
+              <label for="salary">Salary</label> <br />
+              <input
+                type="number"
+                min="50000"
+                max="1000000"
+                value="100000"
+                id="salary"
+              />
+
+              <br />
+
+              <label for="phone">Phone</label> <br />
+              <input type="tel" value="1234567890" id="phone" />
+
+              <br />
+
+              <label for="rating">Rating</label> <br />
+              <input
+                type="range"
+                min="0"
+                max="5"
+                step="0.5"
+                value="3"
+                id="rating"
+              />
+
+              <br />
+
+              <label for="dob">Date of Birth</label> <br />
+              <input
+                type="date"
+                min="2000-01-15"
+                max="2000-03-15"
+                value="2000-02-01"
+                id="dob"
+              />
+
+              <br />
+
+              <label>Favorite Movie Genres</label> <br />
+              <input
+                type="checkbox"
+                id="action"
+                name="favorite-movie-genre"
+                checked
+              />
+              <label for="action">Action</label><br />
+              <input type="checkbox" id="drama" name="favorite-movie-genre" />
+              <label for="drama">Drama</label><br />
+              <input
+                type="checkbox"
+                id="comedy"
+                name="favorite-movie-genre"
+                checked
+              />
+              <label for="comedy">Comedy</label><br />
+              <label for="romance"
+                ><input
+                  type="checkbox"
+                  id="romance"
+                  name="favorite-movie-genre"
+                />
+                Romance </label
+              ><br />
+
+              <br />
+
+              <label>Favorite Movie</label> <br />
+              <input
+                type="checkbox"
+                id="matrix"
+                name="favorite-movie"
+                checked
+                value="matrix"
+              />
+              <label for="matrix">Matrix</label><br />
+              <input
+                type="checkbox"
+                id="inception"
+                name="favorite-movie"
+                value="inception"
+              />
+              <label for="inception">Inception</label><br />
+              <input
+                type="checkbox"
+                id="interstellar"
+                name="favorite-movie"
+                value="interstellar"
+                checked
+              />
+              <label for="interstellar">Interstellar</label><br />
+
+              <br />
+
+              <label>Favorite Music Genre</label> <br />
+              <input
+                type="radio"
+                id="rock"
+                name="favorite-music-genre"
+                checked
+              />
+              <label for="rock">Rock</label><br />
+              <input type="radio" id="pop" name="favorite-music-genre" />
+              <label for="pop">Pop</label><br />
+              <input type="radio" id="jazz" name="favorite-music-genre" />
+              <label for="jazz">Jazz</label><br />
+
+              <br />
+
+              <label>Favorite Color</label> <br />
+              <input type="color" value="#ff0000" />
+
+              <br />
+
+              <label for="bio">Bio</label> <br />
+              <textarea id="bio" rows="4" cols="50">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+voluptatum, quibusdam, quia, quae voluptates voluptatem quod
+exercitationem quos voluptatibus quidem doloribus. Quisquam
+voluptatum, quibusdam, quia, quae voluptates voluptatem quod
+exercitationem quos voluptatibus quidem doloribus.
+      </textarea
+              >
+              <br />
+
+              <label for="avatar">Upload File</label> <br />
+              <input
+                type="file"
+                id="avatar"
+                name="avatar"
+                accept="image/png, image/jpeg"
+              />
+              <br />
+              <br />
+              <button type="submit">Save</button>
+              <button type="reset">Clear</button>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+            </form>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
