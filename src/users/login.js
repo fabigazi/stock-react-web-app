@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginThunk } from "./users-thunks";
 import { useNavigate } from "react-router";
+
 const LoginScreen = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ const LoginScreen = () => {
     </div>
   );
 };
+
 export default LoginScreen;
 export const qwe = 123;
 export const asd = 456;
