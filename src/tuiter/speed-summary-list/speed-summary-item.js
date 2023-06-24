@@ -1,6 +1,6 @@
 import React from "react";
-const TuitSummaryItem = ({
-  tuit = {
+const SpeedSummaryItem = ({
+  speed = {
     topic: "Space",
     userName: "SpaceX",
     time: "2h",
@@ -14,20 +14,20 @@ const TuitSummaryItem = ({
       <div className="row">
         <div className="col-10">
           <div>
-            {tuit.userName} . {tuit.time}
+            {speed.userName} . {speed.time}
           </div>
-          <div className="fw-bolder">{tuit.topic}</div>
-          <div>{tuit.title}</div>
+          <div className="fw-bolder">{speed.topic}</div>
+          <div>{speed.title}</div>
         </div>
         <div className="col-2">
           <img
             width={70}
             className="float-end rounded-3"
-            src={`/images/${tuit.image}`}
+            src={`/images/${speed.image}`}
           />
         </div>
       </div>
     </li>
   );
 };
-export default TuitSummaryItem;
+export default SpeedSummaryItem;

@@ -8,7 +8,7 @@ import WhoToFollowListItem from "./who-to-follow/who-to-follow-item";
 // import { Provider } from "react-redux";
 // import { store } from "./store";
 
-function Tuiter() {
+function Driver() {
   return (
     // <Provider store={store}>
     <div className="row">
@@ -45,4 +45,4 @@ function Tuiter() {
   );
 }
 
-export default Tuiter;
+export default Driver;

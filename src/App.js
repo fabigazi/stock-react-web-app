@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-// import Labs from "./labs";
 import logo from "./logo.svg";
-import Tuiter from "./tuiter";
+import Driver from "./driver";
 import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 import Navigation from "./nav";
 import Users from "./users";
 // import "./App.css";
 import { Provider } from "react-redux";
-import { store } from "./tuiter/store";
+import { store } from "./driver/store";
 import LoginScreen, { qwe, asd } from "./users/login";
 import RegisterScreen from "./users/register";
 import ProfileScreen from "./users/profile";
@@ -47,10 +46,10 @@ function App({ wer, ert, rt }) {
               <Route path="/todos/*" element={<Todos />} />
               <Route path="/" element={<Navigate to="/labs/a3" />} /> */}
               <Route
-                path="/tuiter/*"
+                path="/driver/*"
                 element={
                   <ProtectedRoute>
-                    <Tuiter />
+                    <Driver />
                   </ProtectedRoute>
                 }
               />

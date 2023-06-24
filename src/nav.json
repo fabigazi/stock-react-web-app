@@ -1,4 +1,4 @@
 [
   { "path": "/users", "label": "Users" },
-  { "path": "/tuiter", "label": "Driver" }
+  { "path": "/driver", "label": "Driver" }
 ]

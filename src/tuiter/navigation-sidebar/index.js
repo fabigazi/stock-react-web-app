@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 const NavigationSidebar = () => {
   const { pathname } = useLocation();
-  const [ignore, tuiter, active] = pathname.split("/");
+  const [ignore, driver, active] = pathname.split("/");
   const links = [
     "home",
     "explore",
@@ -19,7 +19,7 @@ const NavigationSidebar = () => {
       {links.map((link) => (
         <Link
           key={link}
-          to={`/tuiter/${link}`}
+          to={`/driver/${link}`}
           className={`list-group-item text-capitalize ${
             active === link ? "active" : ""
           }`}

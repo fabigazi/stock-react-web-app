@@ -1,5 +1,5 @@
-import TuitSummaryList from "../tuit-summary-list";
-import TuitSummaryItem from "../tuit-summary-list/tuit-summary-item";
+import TuitSummaryList from "../speed-summary-list";
+import TuitSummaryItem from "../speed-summary-list/speed-summary-item";
 import { AiOutlineSearch } from "react-icons/ai";
 import { GoGear } from "react-icons/go";
 import "./index.css";
