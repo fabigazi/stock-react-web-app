@@ -47,39 +47,39 @@ function ProfileScreen() {
 
   return (
     <div>
-      <h1>Profile</h1>
+      <h1 className="text-danger fw-bold" style={{fontFamily: "Helvetica"}}>Profile</h1>
       {profile && (
         <>
-          <label>Username</label>
-          <input className="form-control" value={profile.username} readOnly />
-          <label>Password</label>
+          <label className="text-danger" style={{fontFamily: "Helvetica"}}>Username</label>
+          <input className="form-control mb-3 border-danger" value={profile.username} readOnly />
+          <label className="text-danger" style={{fontFamily: "Helvetica"}}>Password</label>
           <input
-            className="form-control"
+            className="form-control mb-3 border-danger"
             value={profile.password}
             type="password"
           />
-          <label>First Name</label>
+          <label className="text-danger" style={{fontFamily: "Helvetica"}}>First Name</label>
           <input
-            className="form-control"
+            className="form-control mb-3 border-danger"
             value={profile.firstName}
             onChange={(e) =>
               setProfile({ ...profile, firstName: e.target.value })
             }
           />
-          <label>Last Name</label>
+          <label className="text-danger" style={{fontFamily: "Helvetica"}}>Last Name</label>
           <input
-            className="form-control"
+            className="form-control mb-3 border-danger"
             value={profile.lastName}
             onChange={(e) =>
               setProfile({ ...profile, lastName: e.target.value })
             }
           />
-          <button onClick={handleUpdate} className="btn btn-primary">
+          <button onClick={handleUpdate} className="btn btn-primary mb-3 me-3 bg-success border-success fw-bold" style={{fontFamily: "Helvetica"}}>
             Update
           </button>
         </>
       )}
-      <button onClick={handleLogout} className="btn btn-danger">
+      <button onClick={handleLogout} className="btn btn-danger fw-bold mb-3" style={{fontFamily: "Helvetica"}}>
         Logout
       </button>
       <pre>{JSON.stringify(mySpeeds, null, 2)}</pre>

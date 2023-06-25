@@ -17,21 +17,21 @@ const Login = () => {
   };
   return (
     <div>
-      <h1>Login</h1>
+      <h1 className="text-danger fw-bold mb-4" style={{fontFamily: "Helvetica"}}>Login</h1>
       <input
         placeholder="Username"
-        className="form-control"
+        className="form-control mb-3 border-danger"
         value={user.username}
         onChange={(e) => setUser({ ...user, username: e.target.value })}
       />
       <input
         placeholder="Password"
         type="password"
-        className="form-control"
+        className="form-control mb-3 border-danger"
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
       />
-      <button onClick={handleLogin} className="btn btn-primary">
+      <button onClick={handleLogin} className="btn btn-success">
         Login
       </button>
     </div>
