@@ -5,6 +5,7 @@ import { HiOutlineGift } from 'react-icons/hi';
 import { BsEmojiSmile } from 'react-icons/bs';
 import { TiCalendar } from 'react-icons/ti';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
+//import { Avatar } from 'mui';
 
 function WhatsHappening() {
     const [speed, setSpeed] = useState("");

@@ -1,5 +1,6 @@
 import SpeedSummaryList from "../speed-summary-list";
 import SpeedSummaryItem from "../speed-summary-list/speed-summary-item";
+import RaceStandings from "../components/standings/standings";
 import "./index.css";
 
 function ExploreScreen() {
@@ -22,13 +23,13 @@ function ExploreScreen() {
         </li>
       </ul>
       <div className="position-relative mb-2">
-        <img src="/images/starship.jpg" className="w-100" />
+        <img src="/images/monaco.jpeg" className="w-100" />
         <h1 className="position-absolute wd-nudge-up text-white">
-          SpaceX Starship
+          Race Standings
         </h1>
       </div>
-
-      <SpeedSummaryList />
+      <RaceStandings />
+      {/* <SpeedSummaryList /> */}
     </div>
   );
 }

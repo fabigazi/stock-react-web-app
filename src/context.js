@@ -8,10 +8,10 @@ export const FilterProvider = ({ children }) => {
 
     return (
         <context.Provider
-            value={{
-                year,
-                setYear,
-            }}
+            value={
+                //year,
+                setYear(year)
+            }
         >
             {children}
         </context.Provider>

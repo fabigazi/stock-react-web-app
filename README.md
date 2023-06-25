@@ -4,6 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## To install on your device
 ### React App: `npm install`, 
+npm install @tanstack/react-query
+npm install @mui/material @emotion/react @emotion/styled
+
 ### Node Server: 
 
 

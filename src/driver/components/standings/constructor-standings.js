@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import current_season from '../../../context/SeasonContext';
-import GenericTable from '../../../components/Table/GenericTable';
+import current_season from '../../../context';
+import StandingsTable from '../table';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
-import { useTeamRankings } from '../api/getTeamRankings';
+import { useTeamRankings } from './api/get_constructor_standings';
 import { Link } from 'react-router-dom';
 import { Typography } from '@mui/material';
 
@@ -37,7 +37,7 @@ function ConstructorStandings() {
     if (!result) {
       return (
         <>
-          <GenericTable rows={[]} columns={columns} />
+          <StandingsTable rows={[]} columns={columns} />
           <Typography className="text-center mt-8">
             No Constructor Championship found in this year.
           </Typography>
@@ -57,7 +57,7 @@ function ConstructorStandings() {
         })}
       </>
     );
-    return <GenericTable rows={constructorRows} columns={columns} />;
+    return <StandingsTable rows={constructorRows} columns={columns} />;
   }
 }
 
