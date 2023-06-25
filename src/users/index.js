@@ -107,6 +107,9 @@ function Users() {
           </li>
         ))}
       </ul>
+
+      <br />
+      <h2>Users JSON Stringify</h2>
       <pre>
         <code>{JSON.stringify(users, null, 2)}</code>
       </pre>

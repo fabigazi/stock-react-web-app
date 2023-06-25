@@ -1,6 +1,5 @@
 [
   { "path": "/users", "label": "Users" },
-  { "path": "/tuiter", "label": "Tuiter" }
+  { "path": "/driver", "label": "Driver" },
+  { "path": "/about", "label": "About" }
 ]
-
-

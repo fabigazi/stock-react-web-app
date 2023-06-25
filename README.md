@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## To install on your device
+### React App: `npm install`, 
+### Node Server: 
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:

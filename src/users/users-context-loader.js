@@ -6,7 +6,7 @@ function UsersContextLoader({ children }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(profileThunk());
-  }, []);
+  }, [dispatch]);
 
   return children;
 }
