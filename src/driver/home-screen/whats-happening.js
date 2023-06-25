@@ -33,7 +33,7 @@ function WhatsHappening() {
     };
 
     return (
-        <div className="row">
+        <div className="row" style={{ fontFamily: "Helvetica" }}>
             <div className="col-auto">
                 <img src={require(`./businessmajor.jpeg`)} width={60} alt="Business Major" className="float-end rounded-circle" />
             </div>
@@ -41,26 +41,26 @@ function WhatsHappening() {
                 <textarea
                     value={speed}
                     placeholder="What's happening?"
-                    className="form-control border-1"
+                    className="form-control border-1 border-danger"
                     onChange={(e) => setSpeed(e.target.value)}
                 ></textarea>
                 <div>
                     <button
-                        className="rounded-pill btn btn-primary float-end mt-2 ps-3 pe-3 fw-bold"
+                        className="rounded-pill bg-danger border-0 btn btn-primary float-end mt-2 ps-3 pe-3 fw-bold"
                         onClick={handleSpeed}>
                         Speed!
                     </button>
                     <div className="text-primary fs-2">
-                        <AiOutlinePicture className="me-3" color="grey" />
-                        <HiOutlineGift className="me-3" color="grey" />
-                        <BsEmojiSmile className="me-3" color="grey" />
-                        <TiCalendar className="me-3" color="grey" />
-                        <HiOutlineLocationMarker className="me-3" color="grey" />
+                        <AiOutlinePicture className="me-3 text-danger" />
+                        <HiOutlineGift className="me-3 text-danger" />
+                        <BsEmojiSmile className="me-3 text-danger" />
+                        <TiCalendar className="me-3 text-danger" />
+                        <HiOutlineLocationMarker className="me-3 text-danger" />
                     </div>
                 </div>
             </div>
             <div className="col-12">
-                <hr />
+                <hr className="text-danger" style={{ borderStyle: "dashed" }}/>
             </div>
             <pre>{JSON.stringify(allSpeeds, null, 2)}</pre>
         </div>
