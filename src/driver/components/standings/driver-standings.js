@@ -25,7 +25,7 @@ const DriverRow = ({ driver }) => {
 };
 
 function DriverStandings() {
-  const { year } = useContext(current_season);
+  const year  = 2023;//useContext(current_season);
   const columns = ['Position', 'Driver', 'Points'];
   const driverRankingsQuery = useDriverRankings(year);
 

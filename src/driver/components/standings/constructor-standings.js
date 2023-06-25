@@ -3,9 +3,8 @@ import current_season from '../../../context';
 import StandingsTable from '../table';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
-import { useTeamRankings } from './api/get_constructor_standings';
+import { useConstructorRankings } from './api/get_constructor_standings';
 import { Link } from 'react-router-dom';
-import { Typography } from '@mui/material';
 
 const ConstructorRow = ({ constructor }) => {
   return (
@@ -26,8 +25,8 @@ const ConstructorRow = ({ constructor }) => {
 };
 
 function ConstructorStandings() {
-  const { year } = useContext(current_season);
-  const teamRankingsQuery = useTeamRankings(year);
+  const year = 2023;//useContext(current_season);
+  const teamRankingsQuery = useConstructorRankings(year);
   const columns = ['Position', 'Constructor', 'Points'];
 
   if (teamRankingsQuery.isSuccess) {
@@ -36,12 +35,7 @@ function ConstructorStandings() {
 
     if (!result) {
       return (
-        <>
-          <StandingsTable rows={[]} columns={columns} />
-          <Typography className="text-center mt-8">
-            No Constructor Championship found in this year.
-          </Typography>
-        </>
+        <h1>No data found!</h1>
       );
     }
 
