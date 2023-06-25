@@ -28,7 +28,7 @@ function ExploreScreen() {
           Season Standings
         </h1>
       </div>
-      {/* <RaceStandings /> */}
+      <RaceStandings />
       {/* <SpeedSummaryList /> */}
 
     </div>
