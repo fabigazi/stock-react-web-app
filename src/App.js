@@ -55,9 +55,7 @@ function App({ wer, ert, rt }) {
               <Route
                 path="/tuiter/*"
                 element={
-                  <ProtectedRoute>
                     <Tuiter />
-                  </ProtectedRoute>
                 }
               />
               <Route path="/labs" element={<Labs />} />
