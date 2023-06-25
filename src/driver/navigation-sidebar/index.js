@@ -31,10 +31,10 @@ const NavigationSidebar = () => {
         <Link
           key={to}
           to={`/driver/${to}`}
-          className={`list-group-item ${active === to ? "active" : ""}`}
+          className={`list-group-item border-danger ${active === to ? "active bg-danger fw-bold" : ""}`}
         >
           <Icon className="me-2" />
-          <span className="sidebar-text">{label}</span>
+          <span className="sidebar-text" style={{ fontFamily: "Helvetica" }}>{label}</span>
         </Link>
       ))}
     </div>
