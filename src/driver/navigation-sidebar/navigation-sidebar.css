@@ -1,0 +1,10 @@
+.sidebar-text {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    .sidebar-text {
+        display: inline-flex;
+
+    }
+}

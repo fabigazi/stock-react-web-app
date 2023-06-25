@@ -1,41 +1,24 @@
-import TuitSummaryList from "../speed-summary-list";
-import TuitSummaryItem from "../speed-summary-list/speed-summary-item";
-import { AiOutlineSearch } from "react-icons/ai";
-import { GoGear } from "react-icons/go";
+import SpeedSummaryList from "../speed-summary-list";
+import SpeedSummaryItem from "../speed-summary-list/speed-summary-item";
 import "./index.css";
 
 function ExploreScreen() {
   return (
     <div>
-      <h1>Explore Screen</h1>
+      <h1>Explore Formula 1</h1>
 
-      <div className="row">
-        <div className="col-11 position-relative">
-          <input
-            placeholder="Search Tuiter"
-            className="form-control rounded-pill ps-5"
-          />
-          <AiOutlineSearch
-            className="fs-3 position-absolute 
-                       wd-nudge-up"
-          />
-        </div>
-        <div className="col-1">
-          <GoGear
-            className="wd-top-4 float-end
-                       fs-3 position-relative"
-          />
-        </div>
-      </div>
       <ul className="nav nav-pills mb-2 mt-2">
         <li className="nav-item">
-          <a className="nav-link active">For You</a>
+          <a className="nav-link active">Standings</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link">Trending</a>
+          <a className="nav-link">Races</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link">News</a>
+          <a className="nav-link">Drivers</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link">Teams</a>
         </li>
       </ul>
       <div className="position-relative mb-2">
@@ -45,14 +28,7 @@ function ExploreScreen() {
         </h1>
       </div>
 
-      <TuitSummaryList />
-      {/* <ul className="list-group">
-        <TuitSummaryItem />
-        <TuitSummaryItem />
-        <TuitSummaryItem />
-        <TuitSummaryItem />
-        <TuitSummaryItem />
-      </ul> */}
+      <SpeedSummaryList />
     </div>
   );
 }

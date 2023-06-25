@@ -13,6 +13,8 @@ import ProfileScreen from "./users/profile";
 import UsersContextLoader from "./users/users-context-loader";
 import ProtectedRoute from "./users/protected-route";
 
+
+
 function App({ wer, ert, rt }) {
   return (
     <Provider store={store}>
@@ -46,9 +48,7 @@ function App({ wer, ert, rt }) {
               <Route
                 path="/driver/*"
                 element={
-                  <ProtectedRoute>
-                    <Driver />
-                  </ProtectedRoute>
+                  <Driver />
                 }
               />
             </Routes>

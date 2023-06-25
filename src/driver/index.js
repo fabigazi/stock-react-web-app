@@ -3,8 +3,6 @@ import ProfileScreen from "../users/profile";
 import ExploreScreen from "./explore-screen";
 import HomeScreen from "./home-screen";
 import NavigationSidebar from "./navigation-sidebar";
-import WhoToFollowList from "./who-to-follow";
-import WhoToFollowListItem from "./who-to-follow/who-to-follow-item";
 import ProtectedRoute from "../users/protected-route";
 // import { Provider } from "react-redux";
 // import { store } from "./store";
@@ -31,17 +29,6 @@ function Driver() {
       </div>
 
       <div className="col-3">
-        <WhoToFollowList />
-        {/* <ul className="list-group">
-          <li className="list-group-item">
-            <h4>Who to follow</h4>
-          </li>
-          <WhoToFollowListItem />
-          <WhoToFollowListItem />
-          <WhoToFollowListItem />
-          <WhoToFollowListItem />
-          <WhoToFollowListItem />
-        </ul> */}
       </div>
     </div>
     // </Provider>
