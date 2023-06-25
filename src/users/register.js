@@ -8,6 +8,16 @@ const RegisterScreen = () => {
   const dispatch = useDispatch();
   const handleRegister = async () => {
     try {
+      const driv = document.getElementById('driv');
+      const admin = document.getElementById('admin');
+
+
+      if (driv.checked) {
+        user.role = "driver"
+      } else if (admin.checked) {
+        user.role = "admin" 
+      }
+
       await dispatch(registerThunk(user));
       navigate("/profile");
     } catch (error) {
@@ -30,6 +40,11 @@ const RegisterScreen = () => {
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
       />
+      <div><input type="radio" name="role" value="Spectator" id="spec"/> <label for="spec">Spectator</label> </div> 
+      <div><input type="radio" name="role" value="Driver" id="driv"/>  <label for="driv">Driver</label></div> 
+      <div><input type="radio" name="role" value="Admin" id="admin"/>  <label for="admin">Admin</label> </div> 
+
+
       <button onClick={handleRegister} className="btn btn-primary">
         Register
       </button>
