@@ -6,6 +6,7 @@ import NavigationSidebar from "./navigation-sidebar";
 import ProtectedRoute from "../users/protected-route";
 import Login from "../users/login"
 import Register from "../users/register"
+import NextRace from "./home-screen/next-race"
 // import { Provider } from "react-redux";
 // import { store } from "./store";
 
@@ -28,8 +29,9 @@ function Driver() {
         </Routes>
       </div>
 
-      {/* <div className="col-3">
-      </div> */}
+      <div className="col-3">
+        <NextRace />
+      </div>
     </div>
     // </Provider>
   );
