@@ -18,7 +18,7 @@ import QueryClient from "./services/react-query";
 
 
 function App({ wer, ert, rt }) {
-  
+
   return (
     <Provider store={store}>
       <QueryClientProvider client={QueryClient}>
@@ -43,9 +43,9 @@ function App({ wer, ert, rt }) {
                 <Route
                   path="/profile"
                   element={
-                    <ProtectedRoute>
-                      <ProfileScreen />
-                    </ProtectedRoute>
+                    // <ProtectedRoute>
+                    <ProfileScreen />
+                    // </ProtectedRoute>
                   }
                 />
                 <Route path="/" element={<Navigate to="/login" />} />

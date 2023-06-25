@@ -1,19 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 import { f1Axios } from '../../../../services/axios';
 
-export const getConstructorRankings = async (season) => {
+export const getConstructorStandings = async (season) => {
     try {
         const response = await f1Axios.get(`${season}/constructorStandings.json`);
-        const raceResults = response.data;
-        console.log(raceResults);
+        console.log(response);
+        return response;
     } catch (error) {
-        console.error('Error fetching constructor results:', error);
+        console.error('Error fetching constructor standings:', error);
+        throw new Error('Failed to fetch constructor standings');
     }
 };
 
-export const useConstructorRankings = (season) => {
-    return useQuery({
-        queryKey: ['constructorStandings', season],
-        queryFn: () => getConstructorRankings(season),
-    });
+export const useConstructorStandings = (season) => {
+    return useQuery(['constructorStandings', season], () => getConstructorStandings(season));
 };

@@ -1,20 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 import { f1Axios } from '../../../../services/axios';
 
-export const getDriverRankings = async (season) => {
+export const getDriverStandings = async (season) => {
     try {
         const response = await f1Axios.get(`${season}/driverStandings.json`);
-        const raceResults = response.data;
-        console.log(raceResults);
+        console.log(response);
+        return response;
     } catch (error) {
-        console.error('Error fetching race results:', error);
+        console.error('Error fetching driver standings:', error);
+        throw new Error('Failed to fetch driver standings');
     }
-    return;
 };
 
-export const useDriverRankings = (season) => {
-    return useQuery({
-        queryKey: ['driverStandings', season],
-        queryFn: () => getDriverRankings(season),
-    });
+export const useDriverStandings = (season) => {
+    return useQuery(['driverStandings', season], () => getDriverStandings(season));
 };

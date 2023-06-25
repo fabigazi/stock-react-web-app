@@ -9,19 +9,20 @@ import React from 'react';
 
 function StandingsTable({ rows, columns }) {
     return (
-        <TableContainer className='w-full'>
-            <Table className='max-w-3xl m-auto'>
+        <TableContainer className="w-full">
+            <Table className="max-w-3xl m-auto">
                 <TableHead>
                     <TableRow>
-                        <TableCell />
                         {columns.map((column, index) => {
-                            return <TableCell key={index} align='left'>{column}</TableCell>;
+                            return (
+                                <TableCell key={index} align="left">
+                                    {column}
+                                </TableCell>
+                            );
                         })}
                     </TableRow>
                 </TableHead>
-                <TableBody>
-                    {rows}
-                </TableBody>
+                <TableBody>{rows}</TableBody>
             </Table>
         </TableContainer>
     );
