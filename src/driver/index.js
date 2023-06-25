@@ -4,6 +4,8 @@ import ExploreScreen from "./explore-screen";
 import HomeScreen from "./home-screen";
 import NavigationSidebar from "./navigation-sidebar";
 import ProtectedRoute from "../users/protected-route";
+import Login from "../users/login"
+import Register from "../users/register"
 // import { Provider } from "react-redux";
 // import { store } from "./store";
 
@@ -18,18 +20,16 @@ function Driver() {
       <div className="col-7">
         <Routes>
           <Route path="home" element={<HomeScreen />} />
-          <Route path="explore" element={<ExploreScreen />} />
-          <Route path="notifications" element={<ProtectedRoute><h1>Notifications</h1></ProtectedRoute>} />
-          
+          <Route path="explore" element={<ExploreScreen />} />      
           <Route path="messages" element={<ProtectedRoute><h1>Messages</h1> </ProtectedRoute>} />
-          
-          <Route path="bookmarks" element={<h1>Bookmarks</h1>} />
+          <Route path="login" element={<Login/>} />
+          <Route path="register" element={<Register/>} />
           <Route path="profile" element={<ProfileScreen />} />
         </Routes>
       </div>
 
-      <div className="col-3">
-      </div>
+      {/* <div className="col-3">
+      </div> */}
     </div>
     // </Provider>
   );

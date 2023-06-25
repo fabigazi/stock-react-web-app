@@ -5,27 +5,31 @@ import { BiHome, BiCompass, BiBell, BiEnvelope, BiBookmark, BiListUl, BiUser, Bi
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import "./navigation-sidebar.css";
 
-
-
 const NavigationSidebar = () => {
   const { pathname } = useLocation();
   const active = pathname.split("/")[2];
   const { currentUser } = useSelector((state) => state.users);
 
-  const links = [
+  let links = [
     { to: 'home', Icon: BiHome, label: 'Home' },
     { to: 'explore', Icon: BiCompass, label: 'Explore' },
-    // { to: 'notifications', Icon: BiBell, label: 'Notifications' },
-    { to: 'messages', Icon: BiEnvelope, label: 'Messages' },
-    // { to: 'bookmarks', Icon: BiBookmark, label: 'Bookmarks' },
-    // { to: 'lists', Icon: BiListUl, label: 'Lists' },
-    // { to: 'more', Icon: BiDotsHorizontal, label: 'More' }
+    { to: 'messages', Icon: BiEnvelope, label: 'Messages' }
   ];
+
+  if (currentUser) {
+    links.push({ to: 'profile', Icon: BiUser, label: 'Profile' });
+  } else {
+    links.push(
+      { to: 'login', Icon: BiUser, label: 'Login' },
+      { to: 'register', Icon: BiUserPlus, label: 'Register' }
+    );
+  }
+
   return (
     <div className="list-group navigation-sidebar">
       {links.map(({ to, Icon, label }) => (
         <Link
-          key={to} // Use a unique identifier as the key
+          key={to}
           to={`/driver/${to}`}
           className={`list-group-item ${active === to ? "active" : ""}`}
         >
@@ -33,26 +37,8 @@ const NavigationSidebar = () => {
           <span className="sidebar-text">{label}</span>
         </Link>
       ))}
-      {!currentUser && (
-        <>
-          <Link to="/login" className={`list-group-item ${active === "login" ? "active" : ""}`}>
-            <BiUser className="me-2" />
-            <span className="sidebar-text">Login</span>
-          </Link>
-          <Link to="/register" className={`list-group-item ${active === "register" ? "active" : ""}`}>
-            <BiUserPlus className="me-2" />
-            <span className="sidebar-text">Register</span>
-          </Link>
-        </>
-      )}
-
-      {currentUser && (
-        <Link to="/profile" className={`list-group-item ${active === "profile" ? "active" : ""}`}>
-          <BiUser className="me-2" />
-          <span className="sidebar-text">Profile</span>
-        </Link>
-      )}
     </div>
   );
 };
+
 export default NavigationSidebar;

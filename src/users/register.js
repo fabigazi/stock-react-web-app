@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerThunk } from "./users-thunks";
 import { useNavigate } from "react-router";
-const RegisterScreen = () => {
+const Register = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -36,6 +36,6 @@ const RegisterScreen = () => {
     </div>
   );
 };
-export default RegisterScreen;
+export default Register;
 export const qwe = 123;
 export const asd = 456;

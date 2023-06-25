@@ -1,6 +1,7 @@
 import React from "react";
 import WhatsHappening from "./whats-happening";
 import { useSelector } from "react-redux";
+//import SpeedList from ??
 
 function HomeScreen() {
   const { currentUser } = useSelector((state) => state.users);
@@ -10,7 +11,7 @@ function HomeScreen() {
       {!currentUser && (
         <WhatsHappening />
       )};
-      {/* <NextRace /> */}
+      {/* <SpeedList/> */}
     </div>
   );
 }
