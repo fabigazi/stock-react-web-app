@@ -42,9 +42,7 @@ function App({ wer, ert, rt }) {
                   </ProtectedRoute>
                 }
               />
-              {/* <Route path="/todos-redux/*" element={<TodosRedux />} />
-              <Route path="/todos/*" element={<Todos />} />
-              <Route path="/" element={<Navigate to="/labs/a3" />} /> */}
+              <Route path="/" element={<Navigate to="/login" />} />
               <Route
                 path="/driver/*"
                 element={

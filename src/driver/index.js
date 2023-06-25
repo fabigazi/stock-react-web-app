@@ -5,6 +5,7 @@ import HomeScreen from "./home-screen";
 import NavigationSidebar from "./navigation-sidebar";
 import WhoToFollowList from "./who-to-follow";
 import WhoToFollowListItem from "./who-to-follow/who-to-follow-item";
+import ProtectedRoute from "../users/protected-route";
 // import { Provider } from "react-redux";
 // import { store } from "./store";
 
@@ -20,8 +21,10 @@ function Driver() {
         <Routes>
           <Route path="home" element={<HomeScreen />} />
           <Route path="explore" element={<ExploreScreen />} />
-          <Route path="notifications" element={<h1>Notifications</h1>} />
-          <Route path="messages" element={<h1>Messages</h1>} />
+          <Route path="notifications" element={<ProtectedRoute><h1>Notifications</h1></ProtectedRoute>} />
+          
+          <Route path="messages" element={<ProtectedRoute><h1>Messages</h1> </ProtectedRoute>} />
+          
           <Route path="bookmarks" element={<h1>Bookmarks</h1>} />
           <Route path="profile" element={<ProfileScreen />} />
         </Routes>

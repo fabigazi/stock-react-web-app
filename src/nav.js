@@ -39,3 +39,13 @@ function Navigation() {
 }
 
 export default Navigation;
+//from the nav.json
+
+/*{ "path": "/labs/a3", "label": "A3" },
+  { "path": "/labs/a4", "label": "A4" },
+  { "path": "/labs/a5", "label": "A5" },
+  { "path": "/labs/a6", "label": "A6" },
+  { "path": "/labs/a7", "label": "A7" },
+  { "path": "/labs/a8", "label": "Assignment 8" },
+  { "path": "/todos", "label": "Todos" },
+  { "path": "/todos-redux", "label": "Todos Redux" }*/
