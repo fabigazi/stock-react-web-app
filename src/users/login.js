@@ -10,7 +10,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       await dispatch(loginThunk(user));
-      navigate("/profile");
+      navigate("/driver/profile");
     } catch (error) {
       console.error(error);
     }
