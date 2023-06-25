@@ -6,7 +6,7 @@ import NavigationSidebar from "./navigation-sidebar";
 import ProtectedRoute from "../users/protected-route";
 import Login from "../users/login"
 import Register from "../users/register"
-import NextRace from "./home-screen/next-race"
+import NextRace from "../driver/components/races/next_race";
 // import { Provider } from "react-redux";
 // import { store } from "./store";
 
@@ -21,10 +21,10 @@ function Driver() {
       <div className="col-7">
         <Routes>
           <Route path="home" element={<HomeScreen />} />
-          <Route path="explore" element={<ExploreScreen />} />      
+          <Route path="explore" element={<ExploreScreen />} />
           <Route path="messages" element={<ProtectedRoute><h1>Messages</h1> </ProtectedRoute>} />
-          <Route path="login" element={<Login/>} />
-          <Route path="register" element={<Register/>} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
           <Route path="profile" element={<ProfileScreen />} />
         </Routes>
       </div>
