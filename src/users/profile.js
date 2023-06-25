@@ -43,7 +43,7 @@ function ProfileScreen() {
     };
     fetchProfile();
     fetchMySpeeds();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
