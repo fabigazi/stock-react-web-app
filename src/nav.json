@@ -1,4 +1,7 @@
 [
   { "path": "/users", "label": "Users" },
-  { "path": "/driver", "label": "Driver" }
+  { "path": "/driver", "label": "Driver" },
+  { "path": "/races", "label": "Races" },
+  { "path": "/standings", "label": "Standings" },
+  { "path": "/teams", "label": "Teams" }
 ]

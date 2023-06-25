@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { profileThunk, logoutThunk, updateUserThunk } from "./users-thunks";
 import { useNavigate } from "react-router";
-import * as tuitsService from "../tuiter/tuits-service";
+import * as tuitsService from "../driver/speeds-service";
 function ProfileScreen() {
   const { currentUser } = useSelector((state) => state.users);
   const [profile, setProfile] = useState(currentUser);
-  const [myTuits, setMyTuits] = useState([]);
+  const [mySpeeds, setMySpeeds] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -33,16 +33,16 @@ function ProfileScreen() {
         navigate("/login");
       }
     };
-    const fetchMyTuits = async () => {
+    const fetchMySpeeds = async () => {
       try {
-        const tuits = await tuitsService.findMyTuits();
-        setMyTuits(tuits);
+        const tuits = await tuitsService.findMySpeeds();
+        setMySpeeds(tuits);
       } catch (error) {
         console.error(error);
       }
     };
     fetchProfile();
-    fetchMyTuits();
+    fetchMySpeeds();
   }, []);
 
   return (
@@ -82,7 +82,7 @@ function ProfileScreen() {
       <button onClick={handleLogout} className="btn btn-danger">
         Logout
       </button>
-      <pre>{JSON.stringify(myTuits, null, 2)}</pre>
+      <pre>{JSON.stringify(mySpeeds, null, 2)}</pre>
     </div>
   );
 }
