@@ -1,34 +1,22 @@
 import React from 'react';
-// import NextRaceCountdown from './NextRaceCountdown';
-import { useLastRace } from './api/get_last_race';
 import { useNextRace } from './api/get_next_race';
 import { Card, Typography } from '@mui/material';
-// import Spinner from '../../../assets/f1-car.gif';
-
-const lookup = require('coordinate_to_country');
+import CircuitFlag from '../circuits/flags';
 
 function NextRace() {
-  const lastRaceQuery = useLastRace();
   const nextRaceQuery = useNextRace();
 
-  if (lastRaceQuery.isSuccess && nextRaceQuery.isSuccess) {
+  if (nextRaceQuery.isSuccess) {
     const nextRace = nextRaceQuery.data.data.MRData.RaceTable.Races[0];
-    const lastRace = lastRaceQuery.data.data.MRData.RaceTable.Races[0];
 
     if (nextRace) {
       const nextRaceName = nextRace.raceName;
+      const nextRaceCircuit = nextRace.Circuit;
       const nextRaceDate = nextRace.date;
       const nextRaceTime = nextRace.time;
-      const lastRaceDate = lastRace.date;
-      const lastRaceTime = lastRace.time;
-
-      const nextRaceCircuit = nextRace.Circuit;
 
       const [nRyear, nRmonth, nRday] = nextRaceDate.split('-');
       const [nRhours, nRminutes] = nextRaceTime.split(':');
-
-      const [lRyear, lRmonth, lRday] = lastRaceDate.split('-');
-      const [lRhours, lRminutes] = lastRaceTime.split(':');
 
       const today = new Date();
       const timeZone = today.getTimezoneOffset() / -60;
@@ -41,39 +29,25 @@ function NextRace() {
         +nRminutes
       );
 
-      const lastRaceDateFormatted = new Date(
-        +lRyear,
-        +lRmonth - 1,
-        +lRday,
-        +lRhours + timeZone,
-        +lRminutes
-      );
-
       return (
         <Card className="max-w-lg mx-auto mt-32">
-          <Typography
-            variant="h2"
-            component="div"
-            sx={{ textAlign: 'center', marginBottom: '1rem' }}
-          >
-            Next Race
-          </Typography>
           <div className="text-center">
-            <img
-              src={`https://countryflagsapi.com/png/${lookup(
-                +nextRaceCircuit.Location.lat,
-                +nextRaceCircuit.Location.long,
-                true
-              )}`}
-              alt="Flag"
-              height={80}
-            />
             <Typography variant="h5" component="div">
-              {nextRaceName}
+              Next Race
             </Typography>
-            <Typography variant="h7">{nextRaceCircuit.circuitName}</Typography>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+              <CircuitFlag circuitId={nextRaceCircuit.circuitId} />
+              <Typography variant="h6" component="div" sx={{ marginLeft: '0.5rem' }}>
+                {nextRaceName}
+              </Typography>
+            </div>
+            <Typography variant="body1" component="div">
+              {nextRaceCircuit.locality}, {nextRaceCircuit.country}
+            </Typography>
+            <Typography variant="body1" component="div">
+              {nextRaceDateFormatted.toDateString()}, Time: {nextRaceTime}
+            </Typography>
           </div>
-          {/* <NextRaceCountdown nextDate={nextRaceDateFormatted} lastDate={lastRaceDateFormatted} /> */}
         </Card>
       );
     } else {
