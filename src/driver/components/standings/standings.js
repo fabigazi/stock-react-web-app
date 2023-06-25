@@ -16,7 +16,7 @@ function Standings() {
   return (
     <>
       {/* <SeasonFilter /> */}
-      <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
+      <Box sx={{ width: '100%' }}>
         <Tabs value={value} onChange={handleChange} centered>
           <Tab label="Drivers" />
           <Tab label="Constructors" />
