@@ -42,7 +42,7 @@ function App({ wer, ert, rt }) {
                   path="/profile"
                   element={
                     // <ProtectedRoute>
-                      <ProfileScreen />
+                    <ProfileScreen />
                     /* </ProtectedRoute> */
                   }
                 />

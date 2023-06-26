@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { profileThunk, logoutThunk, updateUserThunk } from "./users-thunks";
 import { useNavigate } from "react-router";
-import * as speedsService from "../driver/speeds-service";
+import * as speedsService from "../services/speeds-service";
 function ProfileScreen() {
   const { currentUser } = useSelector((state) => state.users);
   const [profile, setProfile] = useState(currentUser);
@@ -23,7 +23,6 @@ function ProfileScreen() {
     }
   };
 
-  const dob = new Date();//new Date(profile.dob).toISOString().split('T')[0]; 
   useEffect(() => {
     const fetchProfile = async () => {
       try {

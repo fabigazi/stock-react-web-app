@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const SERVER = "http://localhost:3000" //"https://stock-node-server-app.onrender.com";
+const SERVER = "https://f1-node-server-app.onrender.com";
 const USER_API = `${SERVER}/users`;
 const BASE_API = `${SERVER}/api`;
 

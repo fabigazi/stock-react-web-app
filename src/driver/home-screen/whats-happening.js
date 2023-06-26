@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import * as speedsService from "../speeds-service";
+import * as speedsService from "../../services/speeds-service";
 import { AiOutlinePicture } from 'react-icons/ai';
 import { HiOutlineGift } from 'react-icons/hi';
 import { BsEmojiSmile } from 'react-icons/bs';

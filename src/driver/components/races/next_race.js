@@ -3,6 +3,7 @@ import { useNextRace } from './api/get_next_race';
 import { Card, Typography } from '@mui/material';
 import CircuitFlag from '../circuits/flags';
 
+
 function NextRace() {
   const nextRaceQuery = useNextRace();
 
@@ -30,6 +31,10 @@ function NextRace() {
       );
 
 
+
+
+
+
       return (
         <Card className="max-w-lg mx-auto mt-32">
           <div className="text-center">
@@ -38,20 +43,13 @@ function NextRace() {
             </Typography>
 
             <CircuitFlag circuitId={nextRaceCircuit.circuitId} />
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <Typography variant="h6" component="div" sx={{ marginLeft: '0.5rem' }}>
                 {nextRaceName}
               </Typography>
             </div>
-
-
-
-
             <Typography variant="body1" component="div">
-              {nextRaceCircuit.locality}, {nextRaceCircuit.circuitId}
-            </Typography>
-            <Typography variant="body1" component="div">
-              {nextRaceDateFormatted.toDateString()}, Time: {nextRaceTime}
+              {nextRaceDateFormatted.toDateString()} at {nextRaceTime}
             </Typography>
           </div>
         </Card>

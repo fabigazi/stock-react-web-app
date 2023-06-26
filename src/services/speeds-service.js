@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const SERVER = "https://stock-node-server-app.onrender.com";
+const SERVER = "https://f1-node-server-app.onrender.com/";
+
 const BASE_API = `${SERVER}/api`;
 
 const request = axios.create({
