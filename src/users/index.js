@@ -4,8 +4,8 @@ import { getUsers, createUser, deleteUser, updateUser } from "./users-service";
 function Users() {
   const [users, setUsers] = useState([]);
   const [newUser, setNewUser] = useState({
-    firstName: "",
-    lastName: "",
+    // firstName: "",
+    // lastName: "",
   });
 
   const handleUpdateUser = async () => {
@@ -72,22 +72,6 @@ function Users() {
             }
             className="form-control w-50"
           />
-          <input
-            placeholder="First Name"
-            value={newUser.firstName}
-            onChange={(e) =>
-              setNewUser({ ...newUser, firstName: e.target.value })
-            }
-            className="form-control w-50"
-          />
-          <input
-            placeholder="Last Name"
-            value={newUser.lastName}
-            onChange={(e) =>
-              setNewUser({ ...newUser, lastName: e.target.value })
-            }
-            className="form-control w-50"
-          />
         </li>
         {users.map((user) => (
           <li className="list-group-item" key={user._id}>
@@ -103,7 +87,7 @@ function Users() {
             >
               Delete
             </button>
-            {user.firstName} {user.lastName}
+            {/* {user.firstName} {user.lastName} */}
           </li>
         ))}
       </ul>

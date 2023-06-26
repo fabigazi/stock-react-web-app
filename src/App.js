@@ -15,8 +15,6 @@ import ProtectedRoute from "./users/protected-route";
 import { QueryClientProvider } from '@tanstack/react-query';
 import QueryClient from "./services/react-query";
 
-
-
 function App({ wer, ert, rt }) {
 
   return (
@@ -44,8 +42,8 @@ function App({ wer, ert, rt }) {
                   path="/profile"
                   element={
                     // <ProtectedRoute>
-                    <ProfileScreen />
-                    // </ProtectedRoute>
+                      <ProfileScreen />
+                    /* </ProtectedRoute> */
                   }
                 />
                 <Route path="/" element={<Navigate to="/login" />} />

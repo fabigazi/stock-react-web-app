@@ -35,14 +35,20 @@ function NextRace() {
             <Typography variant="h5" component="div">
               Next Race
             </Typography>
+
+
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
               <CircuitFlag circuitId={nextRaceCircuit.circuitId} />
               <Typography variant="h6" component="div" sx={{ marginLeft: '0.5rem' }}>
                 {nextRaceName}
               </Typography>
             </div>
+
+
+
+
             <Typography variant="body1" component="div">
-              {nextRaceCircuit.locality}, {nextRaceCircuit.country}
+              {nextRaceCircuit.locality}, {nextRaceCircuit.circuitId}
             </Typography>
             <Typography variant="body1" component="div">
               {nextRaceDateFormatted.toDateString()}, Time: {nextRaceTime}
