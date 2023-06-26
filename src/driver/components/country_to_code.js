@@ -1,6 +1,13 @@
 import countryCodes from './countries.json';
 
-function countryToCountryCode(countryName) {
-    countryName = countryName.toLowerCase();
-    return countryCodes[countryName] || null;
+function getCountryCode(countryName) {
+  for (let code in countryCodes) {
+    if (countryCodes[code] === countryName) {
+      console.log(code);
+      return code;
+    }
   }
+  return null;
+}
+
+export default getCountryCode;

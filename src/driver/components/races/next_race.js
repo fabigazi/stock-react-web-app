@@ -29,6 +29,7 @@ function NextRace() {
         +nRminutes
       );
 
+
       return (
         <Card className="max-w-lg mx-auto mt-32">
           <div className="text-center">
@@ -36,9 +37,8 @@ function NextRace() {
               Next Race
             </Typography>
 
-
+            <CircuitFlag circuitId={nextRaceCircuit.circuitId} />
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-              <CircuitFlag circuitId={nextRaceCircuit.circuitId} />
               <Typography variant="h6" component="div" sx={{ marginLeft: '0.5rem' }}>
                 {nextRaceName}
               </Typography>
