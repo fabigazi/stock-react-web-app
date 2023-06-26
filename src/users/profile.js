@@ -23,6 +23,7 @@ function ProfileScreen() {
     }
   };
 
+  const dob = new Date();//new Date(profile.dob).toISOString().split('T')[0]; 
   useEffect(() => {
     const fetchProfile = async () => {
       try {
