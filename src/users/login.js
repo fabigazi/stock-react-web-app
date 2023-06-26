@@ -39,5 +39,3 @@ const Login = () => {
 };
 
 export default Login;
-export const qwe = 123;
-export const asd = 456;

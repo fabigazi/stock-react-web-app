@@ -1,49 +1,59 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useGetCircuit } from './api/get_circuit';
+import { flagAxios } from '../../../services/axios';
+import countryCodes from '../countries.json';
 
 const CircuitFlag = ({ circuitId }) => {
   const [flagUrl, setFlagUrl] = useState('');
 
-  useEffect(() => {
-    const fetchFlag = async () => {
-      try {
-        const response = await fetch(`http://ergast.com/api/f1/circuits/${circuitId}`);
-        const data = await response.json();
+  // Use the useGetCircuit hook here
+  const { data, isLoading, isError } = useGetCircuit(circuitId);
 
-        // Extract country information from the response
-        const country = data?.MRData?.CircuitTable?.Circuits[0]?.Location?.country;
+  // Get the circuit from the returned data
+  const circuit = data?.MRData?.CircuitTable?.Circuits[0];
+
+  const fetchFlag = useCallback(async () => {
+    try {
+      // Ensure that `circuit` and `circuit.Location` are defined
+      if (circuit && circuit.Location) {
+        const country = circuit.Location.country;
+        console.log(country);
 
         if (country) {
-          // Replace spaces in the country name with underscores
-          const formattedCountry = country.replace(/ /g, '_');
+          const country_code = countryCodes[country] || null;
+          // Fetch the flag image based on the country code
+          const response = await flagAxios.get(`https://flagcdn.com/w20/${country_code}.png`);
 
-          // Fetch the flag image based on the country name
-          const flagResponse = await fetch(`https://countryflagsapi.com/png/${formattedCountry}`);
-          const flagData = await flagResponse.blob();
-
-          // Create an object URL for the flag image
-          const flagObjectUrl = URL.createObjectURL(flagData);
-          setFlagUrl(flagObjectUrl);
+          // Set the flag URL in the state
+          setFlagUrl(response.config.url);
         }
-      } catch (error) {
-        console.error('Error fetching circuit flag:', error);
       }
-    };
+    } catch (error) {
+      console.error('Error fetching circuit flag:', error);
+    }
+  }, [circuit]);
 
-    fetchFlag();
+  // Fetch flag when `circuit` changes
+  useEffect(() => {
+    if (!isLoading && !isError) {
+      fetchFlag();
+    }
+  }, [fetchFlag, isLoading, isError]);
 
-    // Clean up the flag URL when the component unmounts
-    return () => {
-      if (flagUrl) {
-        URL.revokeObjectURL(flagUrl);
-      }
-    };
-  }, [circuitId]);
-
-  if (flagUrl) {
-    return <img src={flagUrl} height="30px" alt="Circuit Flag" />;
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
 
-  return null;
+  if (isError) {
+    return <div>Error fetching circuit data</div>;
+  }
+
+  return (
+    <>
+      {flagUrl && <img src={flagUrl} height="30px" alt="Circuit Flag" />}
+    </>
+  );
 };
+
 
 export default CircuitFlag;
